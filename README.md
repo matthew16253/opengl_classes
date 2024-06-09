@@ -1,2 +1,0 @@
-# Calculator
-pretty self explanatory :)
