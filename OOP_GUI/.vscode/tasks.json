@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe build active file - USE THIS ONE",
+      "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+      "args": [
+        "-static",
+        "-static-libgcc",
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-LC:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_lib",
+        "-IC:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_include",
+        "C:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_src\\glad.c",
+        "-lglfw3dll",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        //"cwd": "C:\\MinGW\\bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
+    }
+  ]
+}
