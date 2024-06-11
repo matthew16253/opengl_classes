@@ -118,7 +118,8 @@ namespace myui
       bool buttonEnabled;
 	  public:
       //Button(){}
-      Button(Display* creator, const glm::vec2 _topleft, const glm::vec2 _bottomright, Texture2D* _texture, glm::vec4 _color, bool shouldRender, void(*command)(double,double), bool buttonEnabled);
+      Button(Display* creator, const glm::vec2 _topleft, const glm::vec2 _bottomright, Texture2D* _texture,
+       glm::vec4 _color, bool shouldRender, void(*command)(double,double), bool buttonEnabled);
       ~Button() override {};
       friend class Display;
       friend void defaultTextCommand(double xpos,double ypos);
@@ -170,7 +171,7 @@ namespace myui
       friend class TextItem;
       friend void mouseCallback(GLFWwindow* window, int button, int action, int mods);
 
-      Display(bool _active,const glm::mat4& _modelMatrix);
+      Display(bool _active, const glm::mat4& _modelMatrix);
 
       void renderRectangles();
       
@@ -180,8 +181,8 @@ namespace myui
 
       void renderAll();
 
-      void use(){active=true;}
-      void disable(){active=false;}
+      inline void use(){active=true;}
+      inline void disable(){active=false;}
 
   };
 

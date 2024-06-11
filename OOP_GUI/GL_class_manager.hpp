@@ -40,7 +40,8 @@ namespace ResourceManager
     {
       location->generate(imgFileName,DEFAULT_WRAP_S,DEFAULT_WRAP_T,DEFAULT_MIN_FILTER,DEFAULT_MAG_FILTER,GL_RGB+alpha,GL_RGB+alpha,nullptr);
     }
-    void getCustomTexture(Texture2D* location,std::string imgFileName,unsigned int wrapX,unsigned int wrapY,unsigned int minimiseFilter,unsigned int magnifyFilter,unsigned int internalFormat,unsigned int imageFormat,int* dimensions)
+    void getCustomTexture(Texture2D* location,std::string imgFileName,unsigned int wrapX,unsigned int wrapY,
+    unsigned int minimiseFilter,unsigned int magnifyFilter,unsigned int internalFormat,unsigned int imageFormat,int* dimensions)
     {
       location->generate(imgFileName,wrapX,wrapY,minimiseFilter,magnifyFilter,internalFormat,imageFormat,dimensions);
     }

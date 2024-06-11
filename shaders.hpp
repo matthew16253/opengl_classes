@@ -53,12 +53,20 @@ class Shader
             glCompileShader(vertexShader);
             glGetShaderiv(vertexShader,GL_COMPILE_STATUS,&vertexCompilationSuccess);
 
-            if(!vertexCompilationSuccess){glGetShaderInfoLog(vertexShader,512,NULL,infoLog);std::cout<<"vertex shader compilation failed\n"<<infoLog<<"\n"<<vertexCode<<std::endl;}
+            if(!vertexCompilationSuccess)
+            {
+                glGetShaderInfoLog(vertexShader,512,NULL,infoLog);
+                std::cout<<"vertex shader compilation failed\n"<<infoLog<<"\n"<<vertexCode<<std::endl;
+            }
             fragmentShader=glCreateShader(GL_FRAGMENT_SHADER);
             glShaderSource(fragmentShader,1,&fragmentShaderCode,NULL);
             glCompileShader(fragmentShader);
             glGetShaderiv(fragmentShader,GL_COMPILE_STATUS,&fragmentCompilationSuccess);
-            if(!fragmentCompilationSuccess){glGetShaderInfoLog(fragmentShader,512,NULL,infoLog);std::cout<<"fragment shader compilation failed\n"<<infoLog<<"\n"<<fragmentCode<<std::endl;}
+            if(!fragmentCompilationSuccess)
+            {
+                glGetShaderInfoLog(fragmentShader,512,NULL,infoLog);
+                std::cout<<"fragment shader compilation failed\n"<<infoLog<<"\n"<<fragmentCode<<std::endl;
+            }
 
             ID=glCreateProgram();
             glAttachShader(ID,vertexShader);
@@ -67,7 +75,10 @@ class Shader
             glGetProgramiv(ID,GL_LINK_STATUS,&programLinkingSuccess);
             if(!programLinkingSuccess){glGetProgramInfoLog(ID,512,NULL,infoLog);std::cout<<"shader program linking failed"<<infoLog<<std::endl;}
 
-            if(!fragmentCompilationSuccess||!vertexCompilationSuccess||!programLinkingSuccess){throw std::invalid_argument("shaders failed to compile (please read errors and then fix)");}
+            if(!fragmentCompilationSuccess||!vertexCompilationSuccess||!programLinkingSuccess)
+            {
+                throw std::invalid_argument("shaders failed to compile (please read errors and then fix)");
+            }
 
             glDeleteShader(vertexShader);
             glDeleteShader(fragmentShader);
@@ -75,7 +86,7 @@ class Shader
         void use(){glUseProgram(ID);}
         //uniform functions
         //const makes it a compiler error to change member vals
-        void setBool(const std::string &name,bool value)const{glUniform1i(glGetUniformLocation(ID,name.c_str()),(int)value);}
+        void setBool(const std::string &name,bool value)const{glUniform1i(glGetUniformLocation(ID,name.c_str()),static_cast<int>(value));}
         void setInt(const std::string &name,int value)const{glUniform1i(glGetUniformLocation(ID,name.c_str()),value);}
         void setFloat(const std::string &name,float value)const{glUniform1f(glGetUniformLocation(ID,name.c_str()),value);}
         
