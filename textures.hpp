@@ -22,7 +22,8 @@ class Texture2D
   public:
     unsigned int ID;
     //Texture2D();
-    void generate(std::string filePath,unsigned int wrapS,unsigned int wrapT,unsigned int minFilter,unsigned int magFilter,unsigned int internalFormat,unsigned int imageFormat,int imageDimensions[2])
+    void generate(std::string filePath,unsigned int wrapS,unsigned int wrapT,unsigned int minFilter,
+    unsigned int magFilter,unsigned int internalFormat,unsigned int imageFormat,int imageDimensions[2])
     {
       if(imageDimensions == nullptr)
       {
