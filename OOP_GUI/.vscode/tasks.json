@@ -10,13 +10,13 @@
         "-static-libgcc",
         "-fdiagnostics-color=always",
         "-g",
-        "${file}",
+        "C:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_include\\opengl_classes\\OOP_GUI\\test.cpp",
         "-LC:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_lib",
         "-IC:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_include",
         "C:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_src\\glad.c",
         "-lglfw3dll",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "C:\\Users\\matth\\Documents\\coding\\OpenGL_resources\\opengl_include\\opengl_classes\\OOP_GUI\\test.exe"
       ],
       "options": {
         //"cwd": "C:\\MinGW\\bin"
