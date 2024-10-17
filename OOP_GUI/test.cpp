@@ -13,7 +13,7 @@ int main()
   //myui::Rectangle r1(&d1, glm::vec2(300,500), glm::vec2(500,300),&t1,glm::vec4(1.0,0.0,1.0,1.0),true);
   myui::Button ba1(&d1,glm::vec2(300,500),glm::vec2(500,300),&t1,glm::vec4(1.0,0.0,1.0,1.0),true,foo,true);
   myui::TextItem ti1(&d1,glm::vec2(0,0),100,myui::defaultTextCommand,true,&t1,glm::vec4(1.0,0.0,1.0,1.0),
-  true,"sigma",glm::vec4(1,1,1,1),true,true);
+                     true,"default_text",glm::vec4(1,1,1,1),true,true);
 
   while(!glfwWindowShouldClose(myui::window))
   {

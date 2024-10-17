@@ -28,8 +28,8 @@
 
 #define DEFAULT_TEXT_SCROLL_SPEED 100
 
-#define DEFAULT_WIDTH 800
-#define DEFAULT_HEIGHT 800
+#define DEFAULT_WIDTH 2000
+#define DEFAULT_HEIGHT 1000
 
 namespace myui
 {
@@ -241,7 +241,7 @@ namespace myui
       {
         bool returnValue = false;
         currentTextScrollCooldown -= DEFAULT_TEXT_SCROLL_SPEED * deltaTime;
-        std::cout<<currentTextScrollCooldown<<"\n";
+        //std::cout<<currentTextScrollCooldown<<"\n";
         if(pressed != lastKeyPressed)
         {
           lastKeyPressed = pressed;
